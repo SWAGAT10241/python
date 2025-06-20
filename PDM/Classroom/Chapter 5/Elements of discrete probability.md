@@ -36,9 +36,9 @@ iii.$P(A^c)=i - P(A)$<br>
 
 Proof 1 <br>
 P(s) = 1<br>
-$P(S \cup \phi) = 1 \ \ \ [s \cup \phi = s]$<br>
-$P(S) + P(\phi) = 1 \ \ \ [s \cap \phi = s]$<br>
-$1 + P(\phi) = 1 \ \ \ P(S \cup \phi) = P(s) + P(\phi)$<br>
+$P(S \cup \phi) = 1 \hspace{1cm} [s \cup \phi = s]$<br>
+$P(S) + P(\phi) = 1 \hspace{1cm} [s \cap \phi = s]$<br>
+$1 + P(\phi) = 1 \hspace{1cm} P(S \cup \phi) = P(s) + P(\phi)$<br>
 $P(\phi) = 0$
 
 Proof 2<br>
@@ -48,10 +48,10 @@ $P(A) + P(A^c) = 1$<br>
 $P(A^c) = 1 - P(A)$<br>
 
 ### Monotonicity
-If $A \subset B $ then P(A) <= P(B)<br>
+If $A \subset B $ then P(A) $\le$ P(B)<br>
 $B = A \cup (B-A)$<br>
-P(B) = P(A)+P(B-A)<br>
-P(B) >= P(A)<br>
+$P(B) = P(A)+P(B-A)$<br>
+$P(B) \ge P(A)$<br>
 
 Q. A football match will take place between Real Madrid CF and FC Barcelora .A sport analysis has forcast that Madrid has 40 % winning chance and Barcrlona has 50% winning chance what is probability that a draw occur<br>
 Answer : <br>
@@ -70,9 +70,65 @@ A LRE is an experiment where every possible outcome has the same probability<br>
 Example: Tossing of coin(Fair coin)<br>
 Rolling of 6 face dice<br>
 #### Theorem:
-1. The sample space is finite,$|S| = |{S_1,S_2,/dots,S_n}| = n<\infet$<br>
+1. The sample space is finite,$|S| = |{S_1,S_2,\dots,S_n}| = n< \infin $<br>
 2. The probability of each outcome is 1/n where n = |S|.<br>
-3. The probability of any event $ E \equsubset is \frac{|E|}{|s|}$<br>
+3. The probability of any event $ E \subseteq
+ is \frac{|E|}{|s|}$<br>
 
-Q1. Suppose, the sample space is infinite i.e there are infinite many outcome in the sample space say ${S_1,S_2,\dots,S_n}$ now by definition of probability measure $P({S_1,S_2,\dots,S_n}) = 1\Rightarrow$ 
+Q1. Suppose, the sample space is infinite i.e there are infinite many outcome in the sample space say ${S_1,S_2,\dots,S_n}$ <br>
+Now by definition of probability measure <br>
+$P({S_1,S_2,\dots,S_n}) = 1\\
+\Rightarrow P({S_1})+P({S_2})+P({S_3})\dots = 1 $<br>
+Since every outcome has same probability <br>
+Assume $P(S_j) = C $ for all j.<br>
+$C_1 + C_2 + \dots \infin \neq 1 $(not possible)<br>
+So, the sample space is finite.
 
+## Monotonicity
+If $A \subseteq B$ then $P(A) \le P(B)$<br>
+$B = A \cup (B - A)$<br>
+$P(B) = P(A) + P(B-A)$<br>
+$P(B) \geq P(A)$
+
+
+
+## Condition Probability
+For two events A and B where P(B) > 0 , the conditional probability of A given B is defined as,<br>
+$P(\frac {A}{B}) = \frac {P(A \cap B)}{P(B)} $<br>
+$P(\frac {A}{B}) \Rightarrow $ Probability of A when there is a condition that B has already happen } A is given B.<br>
+$P(A \cap B)\Rightarrow$ is the joint probability of occuring A and B together.<br>
+P(B) is the probability of event B.<br>
+
+|Temperature |Frequency| Rain - frequency|
+-------------|---------|--------------------|
+|51 - 60(in F)| 4 |1|
+|61 - 70| 12 |5|
+|71 - 80| 13 |10|
+|81 - 90| 20 |8|
+|91 - 100| 1 |1|
+|Total| 50 | 25 |
+
+B = {it rains}<br>
+$P = \{51 <= T <= 60|B\} = ? $<br>
+$P(\frac{T}{B}) =\frac {P(T \cap B)}{P(B)}$<br>
+$P(B) = \frac{25}{50}$<br>
+${P(T \cap B)} = \frac{1}{50}$<br>
+$P (\frac {T}{B}) = \frac {\frac {1}{50}}{\frac {25}{50}}$<br>
+For condition probability ,<br>
+we know<br>
+$P(A \cap B ) = \frac {P(A \cap B)}{P(B)}$<br>
+$\Rightarrow P(A \cap B ) = P(B)P(A|B) \rightarrow 1$<br>
+Similary,<br>
+$P(B | A ) = \frac {P(B \cap A)}{P(A)} $<br>
+$\Rightarrow P(A \cap B ) = P(A)P(B|A)$<br>
+So, $P(A \cap B ) = P(A)P(B|A) = P(B)P(A|B)$ it is call multiplication rule<br>
+
+## The law of Total Probability
+Let , $A_1,A_2,\dots $ be a partition of a sample space s. Let B be an event , then <br>
+
+$P(B) = \sum_{n=1}^\infin P(A_m \cap B) = \sum_{n=1}^\infin P(B|A_n)P(A_m) $<br>
+
+Proof:<br>
+
+since $ S = A_1 \cup A_2 \cup A_3 \cup \dots $<br>
+$B \cap S = (B )$

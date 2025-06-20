@@ -192,7 +192,7 @@ print("Sorted Data Frame:\n", df.sort_values(by=['Department', 'Salary'], ascend
 '''
 
 
-
+'''
 # 10. Write a Python program to:
 # • Define a list list1 = [1, 2, 3] and an integer int1 = 10.
 # • Print the memory addresses of both list1 and int1 using the id() function.
@@ -208,6 +208,7 @@ list1.append(4)
 int1 += 1
 print(f"Memory address of list1 after modification: {id(list1)}")
 print(f"Memory address of int1 after modification: {id(int1)}")
+'''
 
 
 '''
@@ -298,7 +299,7 @@ print(f"Number of different lottery combinations: {lottery_combinations(n, k)}")
 '''
 
 
-'''
+
 # 16. Write a python program using scipy for a treasure hunt game for kids provides clues encrypted using a Caesar
 # cipher. One clue reads: ”KHOOR ZRUOG”, and the kids are told that the letters are shifted by 3 positions.
 
@@ -321,7 +322,7 @@ def caesar_cipher_decrypt(ciphertext, shift):
 ciphertext = "KHOOR ZRUOG"
 shift = 3
 print(f"Decrypted message: {caesar_cipher_decrypt(ciphertext, shift)}")
-'''
+
 
 
 '''

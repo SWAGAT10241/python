@@ -34,7 +34,7 @@ import pandas as pd
 pf = pd.read_csv('/Users/swagatsouravdhar/SEMISTER2/PYTHON/PDM/ASSIGNMENT/MajorASSIGNMENT.csv').rename(columns=lambda x: x.strip())
 print(pf)
 
-
+def 
 # Task 2: Logical Operations on Student Data
 # Problem Statement
 # 1. A student qualifies for a research grant if:

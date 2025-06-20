@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  sql:
+    image: mcr.microsoft.com/azure-sql-edge
+    container_name: sql
+    ports:
+      - "1433:1433"
+    environment:
+      ACCEPT_EULA: "1"
+      MSSQL_SA_PASSWORD: "Swagat10241"
+      MSSQL_PID: "Developer"
+      MSSQL_USER: "SA"
+# docker run -e "ACCEPT_EULA=1" -e "MSSQL_SA_PASSWORD=Swagat10241" -e "MSSQL_PID=Developer" -e "MSSQL_USER=SA" -p 1433:1433 -d --name=sql mcr.microsoft.com/azure-sql-edge
+# docker-compose up -d ## start
+# docker-compose down -d ## stop

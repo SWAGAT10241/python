@@ -115,4 +115,6 @@ df_filtered = df[list(selected_features)]
 print("Selected Features for Training:")
 print(df_filtered)
 '''
-
+print("Decimal",bin(10))
+print("Octal",oct(10))
+print("Hex-decimal",hex(10))
