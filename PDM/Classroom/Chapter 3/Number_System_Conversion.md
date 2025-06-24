@@ -189,7 +189,7 @@ print ( grouped_df )
 ```
 
 ### MAC Address<br>
-A media access control address (MAC) is a unique identifier assigned to a Network interface card (NIC) of a device.The MAc address is store in NIC's RAM.MAC addresses are used in Ethernet,Router and other network technologies to facilitated device identification and communication at the data-link layer of open system interconnection model(OSI) model.
+A media access control address (MAC) is a unique identifier assigned to a Network interface card (NIC) of a device.The MAC address is store in NIC's RAM.MAC addresses are used in Ethernet,Router and other network technologies to facilitated device identification and communication at the data-link layer of open system interconnection model(OSI) model.
 
 ![alt text](image.png)<br>
 ```python

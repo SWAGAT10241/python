@@ -113,10 +113,10 @@ def is_arithmetic_progression(t):
     return True
 
 t = (1, 3, 5, 7, 9)
-print(is_arithmetic_progression(t))  
+print(is_arithmetic_progression(t))
 
 t = (2, 4, 8, 10)
-print(is_arithmetic_progression(t))  
+print(is_arithmetic_progression(t))
 '''
 
 

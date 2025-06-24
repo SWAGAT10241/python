@@ -174,7 +174,7 @@ print("Merged Data Frame:\n", merged_df)
 '''
 
 
-'''
+
 # 9. Write a python program to create a data frame of an office with 60 employees and sort the data frame
 # by one or more columns.
 
@@ -189,7 +189,7 @@ data = {
 }
 df = pd.DataFrame(data)
 print("Sorted Data Frame:\n", df.sort_values(by=['Department', 'Salary'], ascending=[True, False]))
-'''
+
 
 
 '''
@@ -299,7 +299,7 @@ print(f"Number of different lottery combinations: {lottery_combinations(n, k)}")
 '''
 
 
-
+'''
 # 16. Write a python program using scipy for a treasure hunt game for kids provides clues encrypted using a Caesar
 # cipher. One clue reads: ”KHOOR ZRUOG”, and the kids are told that the letters are shifted by 3 positions.
 
@@ -322,23 +322,32 @@ def caesar_cipher_decrypt(ciphertext, shift):
 ciphertext = "KHOOR ZRUOG"
 shift = 3
 print(f"Decrypted message: {caesar_cipher_decrypt(ciphertext, shift)}")
-
+'''
 
 
 '''
 # 17. Write a python program using scipy for a traveling salesman who drives around to visit N cities,
 # including his home city, to try to sell his balloons and then return home. He wants to minimize the
 # distance he travels so that his fuel costs are as small as possible.
+from scipy.spatial.distance import euclidean
+from itertools import permutations
 
-import numpy as np
-from scipy.spatial.distance import cdist
-from scipy.optimize import linear_sum_assignment
 def traveling_salesman(cities):
     n = len(cities)
-    distance_matrix = cdist(cities, cities, metric='euclidean')
-    row_ind, col_ind = linear_sum_assignment(distance_matrix)
-    total_distance = distance_matrix[row_ind, col_ind].sum()
-    return total_distance
-cities = np.array([[0, 0], [1, 2], [3, 1], [4, 4]])
-print(f"Total distance traveled by the salesman: {traveling_salesman(cities)}")
+    min_distance = float('inf')
+    best_route = None
+
+    for perm in permutations(range(1, n)):
+        route = (0,) + perm + (0,)
+        distance = sum(euclidean(cities[route[i]], cities[route[i + 1]]) for i in range(len(route) - 1))
+        if distance < min_distance:
+            min_distance = distance
+            best_route = route
+
+    return min_distance, best_route
+
+cities = [(0, 0), (1, 2), (3, 1), (4, 4)]
+min_distance, best_route = traveling_salesman(cities)
+print(f"Minimum distance: {min_distance}")
+print(f"Best route: {best_route}")
 '''

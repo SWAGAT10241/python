@@ -44,14 +44,14 @@ A permutation is a combination of a set <br>
 Consider a set A = {1,2,3}<br>
 so, the different permutation possible from this set we following,<br>
 
-||
+|               |
 -----------------
-123    |
-132    |
-231    $\text{total 6 permutation are possible} \ 6 = 3!$
-312    |
-321    |
-213    |
+123
+132
+312 $\begin{cases} \text{total 6 permutation are possible} \ 6 = 3!\end{cases}$
+231
+321
+213
 
 `Q`.There are 20 different songs in your playlist .What will be possible distance orders we can play the songs?<br>
 Answer : 20!

@@ -30,11 +30,18 @@
 # 3. Check if is Reflexive, Symmetric, and Transitive.
 
 import pandas as pd
+def relations():
 
-pf = pd.read_csv('/Users/swagatsouravdhar/SEMISTER2/PYTHON/PDM/ASSIGNMENT/MajorASSIGNMENT.csv').rename(columns=lambda x: x.strip())
-print(pf)
+    df = pd.read_csv('/Users/swagatsouravdhar/SEMISTER2/PYTHON/PDM/ASSIGNMENT/MajorASSIGNMENT.csv').rename(columns=lambda x: x.strip())
+    rel = {(i, j) for i in df.index for j in df.index if set(df.loc[i, 'Courses'].replace('{','').replace('}','').split(',')).intersection(set(df.loc[j, 'Courses'].replace('{','').replace('}','').split(',')))}
+    reflexive = all((i, i) in rel for i in df.index)
+    symmetric = all(((i, j) in rel) == ((j, i) in rel) for i in df.index for j in df.index)
+    transitive = all(((i, j) in rel and (j, k) in rel) <= ((i, k) in rel) for i in df.index for j in df.index for k in df.index)
+    return f"Dataframe:\n{df}\nRelation:{rel}\nReflexive: {reflexive}\nSymmetric: {symmetric}\nTransitive: {transitive}"
 
-def 
+print(relations())
+
+
 # Task 2: Logical Operations on Student Data
 # Problem Statement
 # 1. A student qualifies for a research grant if:
@@ -44,14 +51,13 @@ def
 # 2. Create a new column called Scholarship Eligibility that contains True if the student qualifies for the
 # scholarship, and False otherwise. Print the updated dataframe.
 
-print(f"Qualifies for a research\n{pf[(pf['CGPA'] >= 8.5) | ((pf['CGPA'] >= 7.5) & (pf['Extracurricular'] == True))]}")
-from scipy import symbols,AND,OR,NOT
-from sympy.logic.boolalg import truth_table
-Student_ID,Name,Courses,CGPA,Extracurricular = ('Student_ID,Name,Courses,CGPA,Extracurricular')
-print("Student_ID,Name,Courses,CGPA,Extracurricular")
-for i in pf:
-    print(i)
-    if pf['CGPA'] >= 8.5 or (pf['CGPA'] >= 7.5 and pf['Extracurricular'] == True):
-        print("True")
-    else:
-        print("False")
+def qualifies(df):
+    truth_table = pd.DataFrame(
+        [{'CGPA': cgpa, 'Extracurricular': extra, 'Qualifies': (cgpa >= 8.5) or (cgpa >= 7.5 and extra)}
+        for cgpa in [9.0, 8.5, 7.5, 7.0] for extra in [True, False]]
+    )
+    df['Scholarship Eligibility'] = (df['CGPA'] >= 8.5) | ((df['CGPA'] >= 7.5) & df['Extracurricular'])
+    return f'Truth Table \n{truth_table}\nNew Data Frame \n{df}'
+
+print(qualifies(pd.read_csv('/Users/swagatsouravdhar/SEMISTER2/PYTHON/PDM/ASSIGNMENT/MajorASSIGNMENT.csv').rename(columns=lambda x: x.strip())))
+
